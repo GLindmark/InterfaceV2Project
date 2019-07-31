@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace InterfaceV2Project {
-    class Products {
+    public class Products : ICalcSales {// the : ICalcSales is the interface.  Therefore the method must be used.  Use suggested from r-squig
 
         public int Id { get; set; }
         public string Name { get; set; }
@@ -18,6 +18,14 @@ namespace InterfaceV2Project {
             this.Price = Price;
             this.Units = Units;
 
+        }
+
+        public decimal CalcSales() {
+            return Price * Units;
+        }
+
+        public string About() {
+            return "About Products";
         }
     }
 }
